@@ -1,0 +1,292 @@
+/* =========================
+   DESIGN COLORS AND SIZES
+   ========================= */
+
+:root {
+    /* Pale Green */
+    --pale-green: #DCEBD2;
+    --light-green: #EEF6E9;
+    --dark-green: #4F6848;
+
+    /* Pale Pink */
+    --pale-pink: #F5DDE1;
+    --light-pink: #FBECEF;
+    --dark-pink: #9A5965;
+
+    /* Background */
+    --cream: #FFFDF8;
+
+    /* Text Sizes */
+    --small-text: 14px;
+    --normal-text: 16px;
+    --medium-text: 20px;
+    --heading-text: 28px;
+    --title-text: 36px;
+
+    /* Spacing */
+    --small-space: 8px;
+    --medium-space: 16px;
+    --large-space: 24px;
+    --extra-space: 40px;
+}
+
+
+/* =========================
+   BASIC SETTINGS
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: var(--normal-text);
+    line-height: 1.6;
+    color: var(--dark-green);
+    background-color: var(--cream);
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+header {
+    background-color: var(--pale-green);
+    text-align: center;
+    padding: var(--large-space);
+}
+
+header h1 {
+    margin: 0;
+    color: var(--dark-green);
+    font-size: var(--title-text);
+}
+
+
+/* =========================
+   NAVIGATION
+   ========================= */
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--medium-space);
+    margin-top: var(--medium-space);
+}
+
+nav a {
+    color: var(--dark-green);
+    text-decoration: none;
+    font-weight: bold;
+    padding: var(--small-space);
+}
+
+nav a:hover {
+    color: var(--dark-pink);
+}
+
+nav a:focus {
+    outline: 3px solid var(--dark-pink);
+    outline-offset: 3px;
+}
+
+
+/* =========================
+   MAIN CONTENT
+   ========================= */
+
+main {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: var(--large-space);
+}
+
+section {
+    background-color: white;
+    padding: var(--large-space);
+    margin-bottom: var(--large-space);
+    border-radius: 12px;
+}
+
+h2 {
+    color: var(--dark-green);
+    font-size: var(--heading-text);
+}
+
+h3 {
+    color: var(--dark-pink);
+}
+
+
+/* =========================
+   HOME IMAGE
+   ========================= */
+
+.bg-picture {
+    background-color: var(--light-green);
+}
+
+.bg-picture img {
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    margin: var(--large-space) auto 0;
+    border-radius: 12px;
+}
+
+
+/* =========================
+   MATCHA FAVORITE CARDS
+   ========================= */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--medium-space);
+}
+
+.skills-grid article {
+    background-color: var(--pale-pink);
+    padding: var(--medium-space);
+    border-radius: 10px;
+}
+
+.skills-grid article h3 {
+    margin-top: 0;
+}
+
+
+/* =========================
+   TABLE
+   ========================= */
+
+table {
+    width: 100%;
+    margin-top: var(--large-space);
+    border-collapse: collapse;
+}
+
+caption {
+    color: var(--dark-green);
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: var(--small-space);
+}
+
+th,
+td {
+    padding: var(--small-space);
+    border: 1px solid var(--pale-green);
+    text-align: left;
+}
+
+th {
+    background-color: var(--pale-green);
+}
+
+
+/* =========================
+   CONTACT FORM
+   ========================= */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--small-space);
+}
+
+label {
+    margin-top: var(--small-space);
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: var(--normal-text);
+    color: var(--dark-green);
+    background-color: white;
+    border: 1px solid var(--dark-green);
+    border-radius: 6px;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+
+/* =========================
+   BUTTON
+   ========================= */
+
+button {
+    width: fit-content;
+    margin-top: var(--medium-space);
+    padding: 10px 20px;
+    background-color: var(--dark-pink);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: var(--normal-text);
+}
+
+button:hover {
+    background-color: var(--dark-green);
+}
+
+button:focus {
+    outline: 3px solid var(--dark-green);
+    outline-offset: 3px;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    background-color: var(--pale-green);
+    text-align: center;
+    padding: var(--large-space);
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+
+/* When the content needs more space */
+@media (min-width: 600px) {
+
+    main {
+        padding: var(--extra-space);
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* Larger content area */
+@media (min-width: 1000px) {
+
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    section {
+        padding: var(--extra-space);
+    }
+}
